@@ -1,0 +1,49 @@
+<!--<h1>Board#list</h1>
+<p>Find me in app/views/board/list.html.erb</p>-->
+
+
+<center>
+  
+<div class="containor" id="box2">
+    <h1 style="font-size:30px; color:00677F;">한국 외국어대학교 부엉이의 숲</h1>
+<!--작성폼-->
+<fieldset>
+    <legend  style='border-style: inset;'>부엉이의 숲</legend>
+    <form action='/board/create' style="display:block"><br>
+        <label>부엉이명</label>
+        <input type='text' name='username' placeholder='부엉이'/><br><br>
+        <label>내용</label><br>
+        <textarea rows='5' cols="50" name='contents' placeholder='부엉거리기'></textarea>
+        <br>
+        <input type='submit' value='등록' />
+        <p style="font-family:Arial; color:orange;">이 시간에 공부를 했으면 과탑을 했겠지 </p>
+        
+    </form>
+    
+</fieldset>
+</div>
+<!--목록-->
+
+
+<div class="containor" id="boxx">
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>                    
+      <th>부엉이</th>       
+      <th>부엉~</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border:block; color:00677F;">
+        <%@list.each do |letter|%>
+      <th scope="row"><img src="https://lh4.googleusercontent.com/-mCtD4P3dDJg/AAAAAAAAAAI/AAAAAAAAAYQ/LuAmPZl8mV4/s0-c-k-no-ns/photo.jpg" width="40" /></th>
+      
+      <td><%=letter.username%>:</td>
+      <td><%=letter.contents%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>
+</center>
